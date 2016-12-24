@@ -196,6 +196,17 @@ abstract class AbstractTable
     
     ////////////////////////////////////////////////////////////////////////////
     
+    // OUTPUT
+    public function output($column)
+    {
+        // This function is intended to be extended for the sake of formatting
+        // the output of specific columns
+        
+        return $this->get($column);
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    
     protected function formatColumn(&$column)
     {
         $column = str_replace("{$this->table}.", '', strtolower($column));
